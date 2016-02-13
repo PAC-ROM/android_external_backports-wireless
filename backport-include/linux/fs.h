@@ -8,7 +8,7 @@
  */
 #include <linux/uidgid.h>
 
-#if LINUX_VERSION_CODE < KERNEL_VERSION(3,9,0)
+#if LINUX_VERSION_CODE < KERNEL_VERSION(3,4,0)
 /**
  * backport of:
  *
@@ -18,7 +18,7 @@
  *
  *     new helper: file_inode(file)
  */
-static inline struct inode *file_inode(struct file *f);
+extern inline struct inode *file_inode(struct file *f);
 /*{
 	return f->f_path.dentry->d_inode;
 }*/
